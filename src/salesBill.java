@@ -8,7 +8,7 @@ public class salesBill {
     {
         Scanner scan = new Scanner(System.in);
         //Input
-        String inp[] = new String[10];
+        String[] inp = new String[10];
         System.out.println("Enter the no. of products:");
         int num=scan.nextInt();
         for(int i=0;i<num;i++) {
@@ -17,12 +17,23 @@ public class salesBill {
         }
 
         //gettingItemsPrice
-        int noOfItems;
+        String noOfItems;
         String itemName;
-        double price;
+        String price;
         for(int i=0;i<num;i++) {
-            System.out.println(inp[i]);
-            noOfItems[i]=
+            //System.out.println(inp[i]);
+            String[] parts = inp[i].split(" ");
+            noOfItems = parts[0];
+            //itemName = parts[1];
+            System.out.println(noOfItems+" "+itemName);
+
+                    //+" "+parts[1]+":"+parts[2]);
+            /*noOfItems = parts[0]; // 1
+            itemName = parts[1]; // book
+            String[] parts2= inp[i].split("at");
+            price=parts2[1];
+            System.out.println(noOfItems+" "+itemName+":"+price);*/
+
         }
         /*//billFormat
         int noOfItems;
@@ -40,9 +51,11 @@ public class salesBill {
         {
 
         }*/
+        /*
         //Input
-        //1 book at 12.49
-        //1 music CD at 14.99
-        //1 chocolate bar at 0.85
+1 book at 12.49
+1 music CD at 14.99
+1 chocolate bar at 0.85
+        */
     }
 }
