@@ -1,4 +1,4 @@
-import java.util.Scanner;
+import java.util.*;
 
 /**
  * Created by karthika on 24/08/15.
@@ -6,9 +6,20 @@ import java.util.Scanner;
 public class salesBill {
     public static void main(String args[])
     {
-        taxExempted(true, 12.49,findSalesTax(false));
+
+        //billFormat
+        int noOfItems;
+        String itemName;
+        double price;
+        System.out.println(noOfItems+" "+itemName+":"+price);
+        System.out.println("Sales Taxes:");
+        System.out.println("Total:");
+        taxExempted(true, 12.49, findSalesTax(false));
+        taxExempted(false, 14.99, findSalesTax(false));
+        taxExempted(false, 0.85, findSalesTax(false));
 
 
+        /*
         //Input
         Scanner scan = new Scanner(System.in);
         String[] inp = new String[10];
@@ -16,8 +27,8 @@ public class salesBill {
         int num=scan.nextInt();
         for(int i=0;i<num;i++)
             inp[i]=scan.nextLine();
-
-
+        */
+        /*
         //gettingItemsPrice
         String noOfItems;
         String itemName;
@@ -36,9 +47,9 @@ public class salesBill {
             itemName = parts[1]; // book
             String[] parts2= inp[i].split("at");
             price=parts2[1];
-            System.out.println(noOfItems+" "+itemName+":"+price);*/
+            System.out.println(noOfItems+" "+itemName+":"+price);
 
-        }
+        }*/
         /*//billFormat
         int noOfItems;
         String itemName;
@@ -65,9 +76,9 @@ public class salesBill {
         double salesTax;
         double totalPrice=0.0;
         if(imported==true)
-            salesTax=0.15* price;
+            salesTax=Math.round(0.15* price);
         else
-            salesTax = 0.1 * price;
+            salesTax =Math.round(0.1 * price);
         return salesTax;
     }
 
